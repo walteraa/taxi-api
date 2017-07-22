@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo apt-get install mongodb*
+sudo mkdir /data/db
+sudo chown -R `id -u` /data/db
+sudo chown -R `id -u` /tmp/mongodb-27017.sock
+sudo fuser -k 27017/tcp
+sudo service mongodb restart
+
+sudo apt-get install nodejs npm
+rm -rf node_modules/
+npm install
+
