@@ -8,24 +8,17 @@ var Schema = mongoose.Schema;
 var TaxiSchema = new Schema({
   latitude:{
     type: String,
-    Required: 'Latitude required.'
+    required: true
   },
   longitude: {
     type: String,
-    Required: 'Longitude required'
-  },
-  created_at: {
-    type: Date
-  },
-  updated_at:{
-    type: Date
+    required: true
   },
   status: {
     type: [{
       type: String,
       enum: ['available', 'busy']
     }],
-    default: 'available'
   }
 },{timestamps: {
     createdAt: 'created_at',
