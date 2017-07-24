@@ -41,5 +41,11 @@ This package is provided in these module formats:
 
 None
 
+## Linting?
+
+Run `` npm run lint
+``
+To check linting status
+
 ## License
 [ISC]()
