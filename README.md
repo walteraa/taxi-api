@@ -1,5 +1,5 @@
-### Status
 [![Build Status](https://travis-ci.org/GabrielSVinha/taxi-api.png)](https://travis-ci.org/GabrielSVinha/taxi-api)
+[![Coverage Status](https://coveralls.io/repos/github/GabrielSVinha/taxi-api/badge.svg?branch=master)](https://coveralls.io/github/GabrielSVinha/taxi-api?branch=master)
 # taxi-api@1.0.0
 
 
