@@ -1,3 +1,5 @@
+### Status
+[![Build Status](https://travis-ci.org/GabrielSVinha/taxi-api.png)](https://travis-ci.org/GabrielSVinha/taxi-api)
 # taxi-api@1.0.0
 
 
