@@ -21,5 +21,7 @@
     "randomstring": "^1.1.5",
     "should": "^11.2.1",
     "sinon": "^2.3.8"
+  },
+  "devDependencies": {
   }
 }
