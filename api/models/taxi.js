@@ -1,12 +1,11 @@
-'use strict'
-var mongoose = require('mongoose');
+'use strict';
 
-mongoose.connect('mongodb://localhost/Taxidb')
+var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 var TaxiSchema = new Schema({
-  latitude:{
+  latitude: {
     type: String,
     required: true
   },
@@ -18,12 +17,15 @@ var TaxiSchema = new Schema({
     type: [{
       type: String,
       enum: ['available', 'busy']
-    }],
+    }]
   }
-},{timestamps: {
+}, {
+  timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
 });
+
+mongoose.connect('mongodb://localhost/Taxidb');
 
 module.exports = mongoose.model('Taxis', TaxiSchema);
