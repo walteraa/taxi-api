@@ -6,7 +6,7 @@ var Taxi = require('../models/taxi');
 mongoose.connect('mongodb://localhost/Taxidb');
 
 exports.list_taxis = function (req, res) {
-  Taxi.find({}, function (err, taxi) {
+  Taxi.find({}, '-password', function (err, taxi) {
     if (err) {
       res.send(err);
     } else {

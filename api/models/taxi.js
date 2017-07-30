@@ -5,6 +5,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var TaxiSchema = new Schema({
+  name: {
+    type: String,
+    trim: true,
+    unique: true,
+    required: true
+  },
+  password: {
+    type: String,
+    unique: true,
+    required: true
+  },
   latitude: {
     type: String,
     required: true
