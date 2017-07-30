@@ -1,14 +1,10 @@
-#!/usr/bin/env node
-
 var express = require('express');
 var program = require('commander');
 var path = require('path');
 var pkg = require( path.join(__dirname, 'package.json')); 
 var routes = require('./api/routes/routes');
-var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
-require('./api/models/taxi');
+var morgan = require('morgan');
 
 program
   .version(pkg.version)
@@ -19,11 +15,9 @@ var port = program.port || 3000;
 
 var app = express();
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Taxidb');
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 routes(app);
 
