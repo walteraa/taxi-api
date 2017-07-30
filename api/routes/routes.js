@@ -5,7 +5,7 @@ var auth = require('../controllers/authentication-controller');
 
 module.exports = function (app) {
   app.route('/api/auth')
-    .post(auth.create_token);
+    .post(auth.create_driver_token);
   app.route('/api/taxis')
     .get(taxis.list_taxis)
     .post(taxis.create_taxi);

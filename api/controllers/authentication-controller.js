@@ -7,7 +7,7 @@ var db = 'mongodb://localhost/Taxidb';
 
 mongoose.connect(db);
 
-exports.create_token = function (req, res) {
+exports.create_driver_token = function (req, res) {
   Taxi.findOne({ name: req.body.name }, function (err, taxi) {
     var token = jwt.sign(taxi, db, { expiresInMinutes: 1440 });
 
