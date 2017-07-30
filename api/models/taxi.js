@@ -20,7 +20,7 @@ var TaxiSchema = new Schema({
     }]
   },
   approved: {
-    type: boolean,
+    type: Boolean,
     default: true
   }
 }, {
