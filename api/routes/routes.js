@@ -1,11 +1,14 @@
 'use strict';
 
 var taxis = require('../controllers/taxis-controller');
+var auth = require('../controllers/authentication-controller');
 
 module.exports = function (app) {
-  app.route('/taxis')
+  app.route('/api/auth')
+    .post(auth.create_token);
+  app.route('/api/taxis')
     .get(taxis.list_taxis)
     .post(taxis.create_taxi);
-  app.route('/update')
+  app.route('/api/update')
     .post(taxis.update_location);
 };
