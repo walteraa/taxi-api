@@ -1,17 +1,18 @@
 'use strict';
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Taxidb');
 var Taxi = require('../models/taxi');
 
+mongoose.connect('mongodb://localhost/Taxidb');
+
 exports.list_taxis = function (req, res) {
-  var taxis = Taxi.find({}, function (err, taxi) {
+  Taxi.find({}, function (err, taxi) {
     if (err) {
       res.send(err);
+    } else {
+      res.json(taxi);
     }
   });
-
-  res.json(taxis.query('id latitude longitude'))
 };
 
 exports.create_taxi = function (req, res) {
@@ -25,15 +26,15 @@ exports.create_taxi = function (req, res) {
   });
 };
 
-exports.accept_driver = function(req, res){
+exports.accept_driver = function (req, res) {
   var id = req.body.id;
 
-  Taxi.findById(id, function(err, taxi){
+  Taxi.findById(id, function (err, taxi) {
     if (err) {
       res.send(err);
     } else {
       taxi.approved = req.body.approved;
-    };
+    }
     res.send(taxi);
   });
 };

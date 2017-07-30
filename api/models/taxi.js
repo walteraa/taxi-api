@@ -21,7 +21,7 @@ var TaxiSchema = new Schema({
   },
   approved: {
     type: Boolean,
-    default: true
+    default: false
   }
 }, {
   timestamps: {
@@ -32,4 +32,4 @@ var TaxiSchema = new Schema({
 
 mongoose.connect('mongodb://localhost/Taxidb');
 
-mongoose.model('Taxi', TaxiSchema);
+module.exports = mongoose.model('Taxi', TaxiSchema);
