@@ -1,12 +1,16 @@
 FROM node:boron
 
-RUN mkdir -p /usr/src/app
+#Diretorio que o apicativo vai rodar
+WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
+#Copia o arquivo de dependencias pro workdir
+COPY . .
 
+#Instala os paranaue
 RUN npm install
 
-COPY . /usr/src/app
+#Abre a porta 8080
+EXPOSE 3000
 
-EXPOSE 8080
+#Roda o comando de start do package.json
 CMD [ "npm", "start" ]
